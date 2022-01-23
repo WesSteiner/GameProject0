@@ -54,8 +54,8 @@ namespace GameProject0
             // TODO: Add your update logic here
             if (inputManager.Warp) foreach (Keyhole k in keyholes) k.Warp();
             if (inputManager.Win) Win();
+                        base.Update(gameTime);
 
-            base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
