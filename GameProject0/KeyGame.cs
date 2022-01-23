@@ -52,6 +52,8 @@ namespace GameProject0
             if (inputManager.Exit) Exit();
 
             // TODO: Add your update logic here
+            if (inputManager.Warp) foreach (Keyhole k in keyholes) k.Warp();
+            if (inputManager.Win) Win();
 
             base.Update(gameTime);
         }
@@ -67,6 +69,12 @@ namespace GameProject0
             _spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        public void Win()
+        {
+            MessageBox.Show("You did it!", "You may leave.", new[] { "Exit" });
+            Exit();
         }
     }
 }

@@ -31,6 +31,11 @@ namespace GameProject0
         public bool Warp { get; private set; } = false;
 
         /// <summary>
+        /// If the player has won
+        /// </summary>
+        public bool Win { get; private set; } = false;
+
+        /// <summary>
         /// If the user has requested the game end
         /// </summary>
         public bool Exit { get; private set; } = false;
@@ -83,9 +88,13 @@ namespace GameProject0
 
             #region On Click
 
-            if ((currentMouseState.LeftButton == ButtonState.Pressed && priorMouseState.LeftButton == ButtonState.Released))
+            if (currentMouseState.LeftButton == ButtonState.Pressed && priorMouseState.LeftButton == ButtonState.Released)
             {
                 Warp = true;
+            }
+            if (MousePosition == pos)
+            {
+                Win = true;
             }
 
             #endregion

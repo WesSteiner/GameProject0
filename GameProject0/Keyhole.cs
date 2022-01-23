@@ -77,6 +77,6 @@ namespace GameProject0
                 (float)random.NextDouble() * game.GraphicsDevice.Viewport.Width,
                 (float)random.NextDouble() * game.GraphicsDevice.Viewport.Height
                 );
-        }
+        }        
     }
 }
