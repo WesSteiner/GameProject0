@@ -57,7 +57,7 @@ namespace GameProject0
             #region Direction Updating
 
             // Get position from GamePad
-            Direction = currentGamePadState.ThumbSticks.Right * 100 * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            Direction = currentGamePadState.ThumbSticks.Left * 100 * (float)gameTime.ElapsedGameTime.TotalSeconds * new Vector2(1, -1);
 
             // Get position from keyboard
             if (currentKeyboardState.IsKeyDown(Keys.Left) || currentKeyboardState.IsKeyDown(Keys.A)) Direction += new Vector2(-100 * (float)gameTime.ElapsedGameTime.TotalSeconds, 0);

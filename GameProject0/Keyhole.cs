@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using GameProject0.Collisions;
 
 namespace GameProject0
 {
@@ -36,6 +37,11 @@ namespace GameProject0
         /// Tells if keyhole is correct keyhole
         /// </summary>
         public bool Correct { get; set; }
+
+        /// <summary>
+        /// Bounding volume of sprite
+        /// </summary>
+        public BoundingRectangle Bounds { get; set; }
 
         /// <summary>
         /// Constructs a new ball instance
