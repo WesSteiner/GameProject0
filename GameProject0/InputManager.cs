@@ -92,10 +92,6 @@ namespace GameProject0
             {
                 Warp = true;
             }
-            if (MousePosition == pos)
-            {
-                Win = true;
-            }
 
             #endregion
         }

@@ -16,6 +16,7 @@ namespace GameProject0
         private int clickCount = 0;
         private short keyAnimationFrame = 0;
         private double keyAnimationTimer;
+        private BoundingRectangle keyBounds;
 
         public KeyGame()
         {
@@ -36,6 +37,7 @@ namespace GameProject0
                 new Keyhole(this, Color.White) {Position = new Vector2(550, 200), Bounds = new BoundingRectangle(new Vector2(550, 200), 64, 64), Correct = false}
             };
             inputManager = new InputManager();
+            keyBounds = new BoundingRectangle(new Vector2(inputManager.MousePosition.X, inputManager.MousePosition.Y), 59, 64);
             
             base.Initialize();
         }
@@ -61,17 +63,17 @@ namespace GameProject0
             {
                 clickCount++;
                 foreach (Keyhole k in keyholes) 
-                {
+                {                    
                     k.Warp();
                     k.Bounds = new BoundingRectangle(new Vector2(k.Position.X, k.Position.Y), 64, 64);
-                }
-                                
+                }                                
             }
-            if (inputManager.Win) 
+            
+            if (keyholes[2].Bounds.CollidesWith(keyBounds))
             {
                 clickCount++;
                 Win();
-            }
+            }                
             
             base.Update(gameTime);
 
