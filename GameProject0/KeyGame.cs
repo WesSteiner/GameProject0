@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using GameProject0.Collisions;
@@ -13,6 +16,8 @@ namespace GameProject0
         private InputManager inputManager;
         private SpriteFont pixel;
         private Key key;
+        private Random random;
+        private int correct;
         private int clickCount = 0;
 
         public KeyGame()
@@ -25,13 +30,15 @@ namespace GameProject0
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            random = new Random();
+            correct = random.Next(0, 4);
             keyholes = new Keyhole[]
             {
-                new Keyhole(this, Color.White) {Position = new Vector2(150, 200), Bounds = new BoundingRectangle(new Vector2(150, 200), 64, 64), Correct = false},
-                new Keyhole(this, Color.White) {Position = new Vector2(250, 200), Bounds = new BoundingRectangle(new Vector2(250, 200), 64, 64), Correct = false},
-                new Keyhole(this, Color.White) {Position = new Vector2(350, 200), Bounds = new BoundingRectangle(new Vector2(350, 200), 64, 64), Correct = true},
-                new Keyhole(this, Color.White) {Position = new Vector2(450, 200), Bounds = new BoundingRectangle(new Vector2(450, 200), 64, 64), Correct = false},
-                new Keyhole(this, Color.White) {Position = new Vector2(550, 200), Bounds = new BoundingRectangle(new Vector2(550, 200), 64, 64), Correct = false}
+                new Keyhole(this, Color.White) {Position = new Vector2(150, 200), Bounds = new BoundingRectangle(new Vector2(150, 200), 64, 64)},
+                new Keyhole(this, Color.White) {Position = new Vector2(250, 200), Bounds = new BoundingRectangle(new Vector2(250, 200), 64, 64)},
+                new Keyhole(this, Color.White) {Position = new Vector2(350, 200), Bounds = new BoundingRectangle(new Vector2(350, 200), 64, 64)},
+                new Keyhole(this, Color.White) {Position = new Vector2(450, 200), Bounds = new BoundingRectangle(new Vector2(450, 200), 64, 64)},
+                new Keyhole(this, Color.White) {Position = new Vector2(550, 200), Bounds = new BoundingRectangle(new Vector2(550, 200), 64, 64)}
             };
             inputManager = new InputManager();
             key = new Key(this);
@@ -51,7 +58,7 @@ namespace GameProject0
 
         protected override void Update(GameTime gameTime)
         {
-            key.Update(gameTime, keyholes[2], inputManager);
+            key.Update(gameTime, keyholes[correct], inputManager);
 
             if (inputManager.Exit) Exit();
 

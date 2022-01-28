@@ -34,11 +34,6 @@ namespace GameProject0
         public Vector2 Position { get; set; }
 
         /// <summary>
-        /// Tells if keyhole is correct keyhole
-        /// </summary>
-        public bool Correct { get; set; }
-
-        /// <summary>
         /// Bounding volume of sprite
         /// </summary>
         public BoundingRectangle Bounds { get; set; }
