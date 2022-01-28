@@ -40,7 +40,7 @@ namespace GameProject0
         /// </summary>
         public bool Exit { get; private set; } = false;
 
-        public void Update(GameTime gameTime, Vector2 pos)
+        public void Update(GameTime gameTime)
         {
             #region State Updating
             priorKeyboardState = currentKeyboardState;
@@ -91,7 +91,7 @@ namespace GameProject0
             if (currentMouseState.LeftButton == ButtonState.Pressed && priorMouseState.LeftButton == ButtonState.Released)
             {
                 Warp = true;
-            }
+            }            
 
             #endregion
         }
