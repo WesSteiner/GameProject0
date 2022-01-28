@@ -1,0 +1,7 @@
+﻿PixelColeco font by Neale Davidson, released as freeware, accessed from http://www.pixelsagas.com
+
+AnimatedKey sprite by Wes Steiner, modified image, created using PhotoShop
+
+KeyholeSprite sprite by Wes Steiner, modified image, created using PhotoShop
+
+KeySprite sprite by Wes Steiner, modified image, created using PhotoShop
